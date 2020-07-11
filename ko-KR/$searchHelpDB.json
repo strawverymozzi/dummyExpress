@@ -1,0 +1,139 @@
+{
+	"SHPTNGRID": [
+		{
+			"ID": 1,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 2,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 3,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 4,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 5,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 6,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 7,
+			"PTNKEY": "PARTNERKEY",
+			"PTNRNM": "IM PARTNER",
+			"ACTFLG": "Richfield",
+			"BSNUMBER": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		}
+	],
+	"SHSKUGRID": [
+		{
+			"ID": 1,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "Comon yo",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 2,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "7601 Penn Avenue South",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 3,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "7601 Penn Avenue South",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 4,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "7601 Penn Avenue South",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 5,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "7601 Penn Avenue South",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 6,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "7601 Penn Avenue South",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		},
+		{
+			"ID": 7,
+			"SKUKEY": "SKUKEY",
+			"SKUNAM": "7601 Penn Avenue South",
+			"CODEC": "Richfield",
+			"CODED": "Minnesota",
+			"CODEE": 55423,
+			"CODEF": "(612) 291-1000",
+			"CODEG": "(612) 291-2001"
+		}
+	]
+}

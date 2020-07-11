@@ -1,0 +1,8 @@
+{
+	"login": {
+		"dictionary": {
+			"EMAIL": "이메일",
+			"PASSWORD": "비밀번호"
+		}
+	}
+}
