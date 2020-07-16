@@ -38,7 +38,7 @@ class Service {
                 "success": true,
                 "code": 0,
                 "msg": "성공하였습니다.",
-                "list": [jsonDB[target]]
+                "list": jsonDB[target]
             };
         }
         return this.fiddleDataSource(`./${this.lang}/$rcvDB.json`, task);
@@ -49,7 +49,7 @@ class Service {
         const task = (jsonDB) => {
             const insert = () => {
                 data["uid"] = data["uid"] ? data["uid"] : this.getUID();
-                jsonDB[target]["list"].push(data);
+                jsonDB[target].push(data);
                 return {
                     "success": true,
                     "code": 0,
@@ -58,10 +58,10 @@ class Service {
                 };
             }
             const update = () => {
-                const list = jsonDB[target]["list"];
+                const list = jsonDB[target];
                 for (let idx in list) {
                     if (list[idx]["uid"] == data["uid"]) {
-                        jsonDB[target]["list"].splice(idx, 1, data);
+                        jsonDB[target].splice(idx, 1, data);
                     }
                 }
                 return {
@@ -72,7 +72,7 @@ class Service {
                 };
             }
 
-            return this.hasID(jsonDB[target]["list"], data["uid"]) ? update() : insert();
+            return this.hasID(jsonDB[target], data["uid"]) ? update() : insert();
         }
 
         return this.fiddleDataSource(`./${this.lang}/$rcvDB.json`, task);
@@ -80,10 +80,10 @@ class Service {
 
     static deleteRCV(key, target) {
         const task = (jsonDB) => {
-            const list = jsonDB[target]["list"];
+            const list = jsonDB[target];
             for (let idx in list) {
                 if (list[idx]["uid"] == key) {
-                    jsonDB[target]["list"].splice(idx, 1);
+                    jsonDB[target].splice(idx, 1);
                 }
             }
             return {
@@ -102,7 +102,7 @@ class Service {
         // const task = (jsonDB) => {
         //     const insert = () => {
         //         data["uid"] = data["uid"] ? data["uid"] : this.getUID();
-        //         jsonDB[target]["list"].push(data);
+        //         jsonDB[target].push(data);
         //         return {
         //             "success": true,
         //             "code": 0,
@@ -111,10 +111,10 @@ class Service {
         //         };
         //     }
         //     const update = () => {
-        //         const list = jsonDB[target]["list"];
+        //         const list = jsonDB[target];
         //         for (let idx in list) {
         //             if (list[idx]["uid"] == data["uid"]) {
-        //                 jsonDB[target]["list"].splice(idx, 1, data);
+        //                 jsonDB[target].splice(idx, 1, data);
         //             }
         //         }
         //         return {
@@ -125,7 +125,7 @@ class Service {
         //         };
         //     }
 
-        //     return this.hasID(jsonDB[target]["list"], data["uid"]) ? update() : insert();
+        //     return this.hasID(jsonDB[target], data["uid"]) ? update() : insert();
         // }
 
         // return this.fiddleDataSource('$rcvDB.json', task);
