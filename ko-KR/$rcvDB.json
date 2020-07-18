@@ -15,7 +15,7 @@
 			"sts": "200.0",
 			"priorities": "0.0",
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트COMPANNY2",
+			"companyName": "테스트COMPANNY11",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -24,8 +24,8 @@
 			"warehouseName": "창고이름",
 			"suppliercd": null,
 			"supplierName": null,
-			"address1": "aaabbbccc",
-			"address2": "zzzxxxccc",
+			"address1": "address1ss",
+			"address2": "address2ㅌㅌ",
 			"address3": null,
 			"postNo": null,
 			"countrycd": null,
@@ -351,10 +351,14 @@
 			"remarks": null
 		},
 		{
-			"companyName": "테스트COMPANNY",
+			"uid": "162020095346231",
+			"companyName": "테스트COMPANNY00",
 			"address1": "aaabbbccc",
-			"address2": "zzzxxxccc",
-			"uid": "162020095346231"
+			"address2": "zzzxxxccc"
+		},
+		{
+			"companyName": "sdxczxzxczxczx@#",
+			"uid": "9ce21933-17dc-1ee6-389e-b262d1d63a7b"
 		}
 	],
 	"listRcvDetail": [

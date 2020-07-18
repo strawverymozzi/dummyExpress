@@ -48,7 +48,7 @@ class Service {
 
         const task = (jsonDB) => {
             const insert = () => {
-                data["uid"] = data["uid"] ? data["uid"] : this.getUID();
+                data["uid"] = data["uid"] ? data["uid"] : this.getNewUID();
                 jsonDB[target].push(data);
                 return {
                     "success": true,
@@ -61,15 +61,18 @@ class Service {
                 const list = jsonDB[target];
                 for (let idx in list) {
                     if (list[idx]["uid"] == data["uid"]) {
-                        jsonDB[target].splice(idx, 1, data);
+                        for (let key of Object.keys(data)) {
+                            list[idx][key] = data[key]
+                        }
+                        return {
+                            "success": true,
+                            "code": 0,
+                            "msg": "마스터 UPDATE 성공하였습니다.",
+                            "list": [data]
+                        };
                     }
                 }
-                return {
-                    "success": true,
-                    "code": 0,
-                    "msg": "마스터 UPDATE 성공하였습니다.",
-                    "list": [data]
-                };
+
             }
 
             return this.hasID(jsonDB[target], data["uid"]) ? update() : insert();
@@ -131,7 +134,7 @@ class Service {
         // return this.fiddleDataSource('$rcvDB.json', task);
     }
 
-    static getUID() {
+    static getNewUID() {
         const date = new Date();
         return (date.toUTCString() + date.getMilliseconds()).replace(/[A-Za-z\s,:]/g, '');
     }
@@ -154,49 +157,49 @@ class Service {
             "msg": "성공하였습니다.",
             "transationTime": "2020-05-17T20:12:56.9294169",
             "list": [{
-                    "uid": 10000,
+                "uid": 10000,
+                "tenant": "1000",
+                "title": "MENU1",
+                "icon": "shopping-cart-outline",
+                "menuPath": "10000",
+                "appUid": null,
+                "url": null,
+                "link": null,
+                "windowName": null,
+                "children": [{
+                    "uid": 10002,
                     "tenant": "1000",
-                    "title": "MENU1",
+                    "title": "입고예정",
                     "icon": "shopping-cart-outline",
-                    "menuPath": "10000",
-                    "appUid": null,
-                    "url": null,
-                    "link": null,
-                    "windowName": null,
-                    "children": [{
-                        "uid": 10002,
-                        "tenant": "1000",
-                        "title": "입고예정",
-                        "icon": "shopping-cart-outline",
-                        "menuPath": "10000|10002",
-                        "appUid": 90003,
-                        "url": "http://localhost:3001/api/global/sampleComp",
-                        "link": "/adminPages/CM/application3",
-                        "windowName": "rcv",
-                        "children": [],
-                        "insFlg": "I3bf0faZOdYKsS5EhYGUStkWhWiBV8gBC5p1FG8xz5U=",
-                        "updFlg": "LkhF1x2Eva7i9SYNof0fetkWhWiBV8gBC5p1FG8xz5U=",
-                        "delFlg": ""
-                    }],
-                    "insFlg": null,
-                    "updFlg": null,
-                    "delFlg": null
-                },
-                {
-                    "uid": 10001,
-                    "tenant": "1000",
-                    "title": "MENU2",
-                    "icon": "shopping-cart-outline",
-                    "menuPath": "10001",
-                    "appUid": 90001,
-                    "url": "/CM/test1",
-                    "link": "/adminPages/AdminModule1Module/test1",
-                    "windowName": null,
+                    "menuPath": "10000|10002",
+                    "appUid": 90003,
+                    "url": "http://localhost:3001/api/global/sampleComp",
+                    "link": "/adminPages/CM/application3",
+                    "windowName": "rcv",
                     "children": [],
-                    "insFlg": "02W4Lc/aYBMcIVioXkTauRnoFbEk1cqa4/mCe/vGkl8=",
-                    "updFlg": "hmxY0gurkbZKWgPc6/F2T2S6MlbNlnG3Vit+rhh3swk=",
-                    "delFlg": "POa4BMjxP1K9uqzyh5Sfbw40bL2g90IdSu66IniFxK4="
-                }
+                    "insFlg": "I3bf0faZOdYKsS5EhYGUStkWhWiBV8gBC5p1FG8xz5U=",
+                    "updFlg": "LkhF1x2Eva7i9SYNof0fetkWhWiBV8gBC5p1FG8xz5U=",
+                    "delFlg": ""
+                }],
+                "insFlg": null,
+                "updFlg": null,
+                "delFlg": null
+            },
+            {
+                "uid": 10001,
+                "tenant": "1000",
+                "title": "MENU2",
+                "icon": "shopping-cart-outline",
+                "menuPath": "10001",
+                "appUid": 90001,
+                "url": "/CM/test1",
+                "link": "/adminPages/AdminModule1Module/test1",
+                "windowName": null,
+                "children": [],
+                "insFlg": "02W4Lc/aYBMcIVioXkTauRnoFbEk1cqa4/mCe/vGkl8=",
+                "updFlg": "hmxY0gurkbZKWgPc6/F2T2S6MlbNlnG3Vit+rhh3swk=",
+                "delFlg": "POa4BMjxP1K9uqzyh5Sfbw40bL2g90IdSu66IniFxK4="
+            }
             ]
         }
     }
