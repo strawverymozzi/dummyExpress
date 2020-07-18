@@ -48,7 +48,8 @@ class Service {
 
         const task = (jsonDB) => {
             const insert = () => {
-                data["uid"] = data["uid"] ? data["uid"] : this.getNewUID();
+                // data["uid"] = data["uid"] ? data["uid"] : this.getNewUID();
+                data["uid"] = this.getNewUID();
                 jsonDB[target].push(data);
                 return {
                     "success": true,
