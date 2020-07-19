@@ -15,7 +15,7 @@
 			"sts": "200.0",
 			"priorities": "0.0",
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트COMPANNY11",
+			"companyName": "테스트COMPANNY100",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -94,7 +94,7 @@
 			"warehouseName": "창고이름",
 			"suppliercd": null,
 			"supplierName": null,
-			"address1": null,
+			"address1": "sdfs",
 			"address2": null,
 			"address3": null,
 			"postNo": null,
@@ -155,7 +155,7 @@
 			"sts": "200.0",
 			"priorities": "0.0",
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트COMPANNY2",
+			"companyName": "테스트COMPANNY99",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -225,7 +225,7 @@
 			"sts": "200.0",
 			"priorities": "0.0",
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트COMPANNY2",
+			"companyName": "테스트COMPANNY3030",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -278,7 +278,8 @@
 			"moveKey": null,
 			"assyKey": null,
 			"produceKey": null,
-			"remarks": null
+			"remarks": null,
+			"phone1": "asads"
 		},
 		{
 			"uid": "10004.0",
@@ -357,146 +358,80 @@
 			"address2": "zzzxxxccc"
 		},
 		{
-			"companyName": "fbbc",
-			"uid": "182020133529776"
+			"companyName": "google",
+			"uid": "182020133529776",
+			"name": "qw",
+			"phone1": "qwqwe"
+		},
+		{
+			"uid": "182020231425507",
+			"companyName": "1"
+		},
+		{
+			"uid": "182020235043479",
+			"companyName": "moraron.com",
+			"name": "be,loved"
+		},
+		{
+			"uid": "192020031013587",
+			"companyName": "sdf",
+			"name": "sdf"
 		}
 	],
 	"listRcvDetail": [
 		{
 			"uid": 1,
-			"CODEA": "anyVal",
-			"CODEB": "TESttttttssssssssssssssssssssssssssssssssssttttttttttttttttttttttttdddddddddddT",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 2,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 3,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 4,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 5,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 6,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 7,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 8,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 9,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
+			"tenant": "1000",
+			"CODEB": "qwe",
+			"CODEC": "52525",
 			"CODED": "Richfield",
 			"CODEE": "Minnesota"
 		},
 		{
 			"uid": 10,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 11,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
+			"tenant": "1000",
+			"CODEB": "qwe",
 			"CODEC": "7601 Penn Avenue South",
 			"CODED": "Richfield",
 			"CODEE": "Minnesota"
 		},
 		{
 			"uid": 12,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
-		},
-		{
-			"uid": 13,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
+			"tenant": "1000",
+			"CODEB": "qwe",
 			"CODEC": "7601 Penn Avenue South",
 			"CODED": "Richfield",
 			"CODEE": "Minnesota"
 		},
 		{
 			"uid": 14,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
+			"tenant": "1000",
+			"CODEB": "c",
 			"CODEC": "7601 Penn Avenue South",
 			"CODED": "Richfield",
 			"CODEE": "Minnesota"
 		},
 		{
-			"uid": 15,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
+			"uid": "19202006383139",
+			"CODEB": "qwe"
 		},
 		{
-			"uid": 16,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
+			"CODEB": "c",
+			"uid": "19202006385675"
 		},
 		{
-			"uid": 17,
-			"CODEA": "anyVal",
-			"CODEB": "TEST",
-			"CODEC": "7601 Penn Avenue South",
-			"CODED": "Richfield",
-			"CODEE": "Minnesota"
+			"CODEB": "bbb",
+			"uid": "192020063925119"
+		},
+		{
+			"CODEB": "here with outu",
+			"CODEC": "bay",
+			"uid": "192020064010282"
+		},
+		{
+			"CODEB": "here with outu",
+			"CODEC": "babay",
+			"uid": "192020064010297"
 		}
 	]
 }

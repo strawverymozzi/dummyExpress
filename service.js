@@ -1,4 +1,5 @@
 var fs = require('fs');
+
 class Service {
 
     static language = {
@@ -14,17 +15,11 @@ class Service {
     static fiddleDataSource(filePath, taskfunction) {
         let rs;
         return new Promise((res, rej) => {
-            fs.readFile(filePath, 'utf8', function readFileCallback(err, data) {
-                if (err) {
-                    rej(err);
-                } else {
-                    const jsonDB = JSON.parse(data); //now it an object
-                    rs = taskfunction(jsonDB); //add some data
-                    fs.writeFile(filePath, JSON.stringify(jsonDB, null, "\t"), 'utf8', function () {
-                        res(rs);
-                    }); // write it back 
-                }
-            });
+            const data = fs.readFileSync(filePath, 'utf8', function readFileCallback(err, data) {});
+            const jsonDB = JSON.parse(data); //now it an object
+            rs = taskfunction(jsonDB); //add some data
+            fs.writeFileSync(filePath, JSON.stringify(jsonDB, null, "\t"), 'utf8', function () {}); // write it back 
+            res(rs);
         })
     }
 
@@ -54,7 +49,7 @@ class Service {
                 return {
                     "success": true,
                     "code": 0,
-                    "msg": "마스터 INSERT 성공하였습니다.",
+                    "msg": target == "listRcv"? "마스터 INSERT 성공하였습니다.":"디테일 INSERT 성공하였습니다.",
                     "list": [data]
                 };
             }
@@ -68,7 +63,7 @@ class Service {
                         return {
                             "success": true,
                             "code": 0,
-                            "msg": "마스터 UPDATE 성공하였습니다.",
+                            "msg": target == "listRcv"? "마스터 UPDATE 성공하였습니다.":"디테일 UPDATE 성공하였습니다.",
                             "list": [data]
                         };
                     }
@@ -102,42 +97,26 @@ class Service {
     }
 
     static changeAll(data) {
+        const master = data["rcvMasterDto"];
+        const detailList = data["rcvDetailDtoList"] //array
 
-        // const task = (jsonDB) => {
-        //     const insert = () => {
-        //         data["uid"] = data["uid"] ? data["uid"] : this.getUID();
-        //         jsonDB[target].push(data);
-        //         return {
-        //             "success": true,
-        //             "code": 0,
-        //             "msg": "마스터 INSERT 성공하였습니다.",
-        //             "list": [data]
-        //         };
-        //     }
-        //     const update = () => {
-        //         const list = jsonDB[target];
-        //         for (let idx in list) {
-        //             if (list[idx]["uid"] == data["uid"]) {
-        //                 jsonDB[target].splice(idx, 1, data);
-        //             }
-        //         }
-        //         return {
-        //             "success": true,
-        //             "code": 0,
-        //             "msg": "마스터 UPDATE 성공하였습니다.",
-        //             "list": [data]
-        //         };
-        //     }
+        const promiseChain = [this.changeRCV(master, 'listRcv')];
+        for (let detail of detailList) {
+            promiseChain.push(this.changeRCV(detail, 'listRcvDetail'));
+        }
 
-        //     return this.hasID(jsonDB[target], data["uid"]) ? update() : insert();
-        // }
+        return Promise.all(promiseChain)
+            .then((results) => {
+                return results;
+            })
+            .catch((e) => {
+            });
 
-        // return this.fiddleDataSource('$rcvDB.json', task);
     }
 
     static getNewUID() {
         const date = new Date();
-        return (date.toUTCString() + date.getMilliseconds()).replace(/[A-Za-z\s,:]/g, '');
+        return (`${date.toUTCString()}${date.getMilliseconds()}`).replace(/[A-Za-z\s,:]/g, '');
     }
 
     static hasID(list, uid) {
@@ -158,49 +137,49 @@ class Service {
             "msg": "성공하였습니다.",
             "transationTime": "2020-05-17T20:12:56.9294169",
             "list": [{
-                "uid": 10000,
-                "tenant": "1000",
-                "title": "MENU1",
-                "icon": "shopping-cart-outline",
-                "menuPath": "10000",
-                "appUid": null,
-                "url": null,
-                "link": null,
-                "windowName": null,
-                "children": [{
-                    "uid": 10002,
+                    "uid": 10000,
                     "tenant": "1000",
-                    "title": "입고예정",
+                    "title": "MENU1",
                     "icon": "shopping-cart-outline",
-                    "menuPath": "10000|10002",
-                    "appUid": 90003,
-                    "url": "http://localhost:3001/api/global/sampleComp",
-                    "link": "/adminPages/CM/application3",
-                    "windowName": "rcv",
+                    "menuPath": "10000",
+                    "appUid": null,
+                    "url": null,
+                    "link": null,
+                    "windowName": null,
+                    "children": [{
+                        "uid": 10002,
+                        "tenant": "1000",
+                        "title": "입고예정",
+                        "icon": "shopping-cart-outline",
+                        "menuPath": "10000|10002",
+                        "appUid": 90003,
+                        "url": "http://localhost:3001/api/global/sampleComp",
+                        "link": "/adminPages/CM/application3",
+                        "windowName": "rcv",
+                        "children": [],
+                        "insFlg": "I3bf0faZOdYKsS5EhYGUStkWhWiBV8gBC5p1FG8xz5U=",
+                        "updFlg": "LkhF1x2Eva7i9SYNof0fetkWhWiBV8gBC5p1FG8xz5U=",
+                        "delFlg": ""
+                    }],
+                    "insFlg": null,
+                    "updFlg": null,
+                    "delFlg": null
+                },
+                {
+                    "uid": 10001,
+                    "tenant": "1000",
+                    "title": "MENU2",
+                    "icon": "shopping-cart-outline",
+                    "menuPath": "10001",
+                    "appUid": 90001,
+                    "url": "/CM/test1",
+                    "link": "/adminPages/AdminModule1Module/test1",
+                    "windowName": null,
                     "children": [],
-                    "insFlg": "I3bf0faZOdYKsS5EhYGUStkWhWiBV8gBC5p1FG8xz5U=",
-                    "updFlg": "LkhF1x2Eva7i9SYNof0fetkWhWiBV8gBC5p1FG8xz5U=",
-                    "delFlg": ""
-                }],
-                "insFlg": null,
-                "updFlg": null,
-                "delFlg": null
-            },
-            {
-                "uid": 10001,
-                "tenant": "1000",
-                "title": "MENU2",
-                "icon": "shopping-cart-outline",
-                "menuPath": "10001",
-                "appUid": 90001,
-                "url": "/CM/test1",
-                "link": "/adminPages/AdminModule1Module/test1",
-                "windowName": null,
-                "children": [],
-                "insFlg": "02W4Lc/aYBMcIVioXkTauRnoFbEk1cqa4/mCe/vGkl8=",
-                "updFlg": "hmxY0gurkbZKWgPc6/F2T2S6MlbNlnG3Vit+rhh3swk=",
-                "delFlg": "POa4BMjxP1K9uqzyh5Sfbw40bL2g90IdSu66IniFxK4="
-            }
+                    "insFlg": "02W4Lc/aYBMcIVioXkTauRnoFbEk1cqa4/mCe/vGkl8=",
+                    "updFlg": "hmxY0gurkbZKWgPc6/F2T2S6MlbNlnG3Vit+rhh3swk=",
+                    "delFlg": "POa4BMjxP1K9uqzyh5Sfbw40bL2g90IdSu66IniFxK4="
+                }
             ]
         }
     }
