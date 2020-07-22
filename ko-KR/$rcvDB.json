@@ -352,30 +352,15 @@
 			"remarks": null
 		},
 		{
-			"uid": "162020095346231",
-			"companyName": "google",
-			"address1": "aaabbbccc",
-			"address2": "zzzxxxccc"
-		},
-		{
 			"companyName": "google",
 			"uid": "182020133529776",
 			"name": "qw",
 			"phone1": "qwqwe"
 		},
 		{
-			"uid": "182020231425507",
-			"companyName": "1"
-		},
-		{
 			"uid": "182020235043479",
 			"companyName": "moraron.com",
 			"name": "be,loved"
-		},
-		{
-			"uid": "192020031013587",
-			"companyName": "sdf",
-			"name": "sdf"
 		}
 	],
 	"listRcvDetail": [

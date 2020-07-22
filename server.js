@@ -76,9 +76,10 @@ app.post('/api/v1/rec/receive/saveRcv', async (req, res) => {
     res.send(result);
 });
 
-app.delete('/api/v1/rec/receive/deleteRcv/:key', async (req, res) => {
-    const key = req.params.key;
-    result = await Service.deleteRCV(key, "listRcv");
+app.delete('/api/v1/rec/receive/deleteRcv', async (req, res) => {
+    // const key = req.params.key;
+    const body = req.body;
+    result = await Service.deleteRCV(body, "listRcv");
     res.send(result);
 })
 
@@ -92,9 +93,10 @@ app.post('/api/v1/rec/receive/saveRcvDetail', async (req, res) => {
     res.send(result);
 });
 
-app.delete('/api/v1/rec/receive/deleteRcvDetail/:key', async (req, res) => {
-    const key = req.params.key;
-    result = await Service.deleteRCV(key, "listRcvDetail");
+app.delete('/api/v1/rec/receive/deleteRcvDetail', async (req, res) => {
+    // const key = req.params.key;
+    const body = req.body;
+    result = await Service.deleteRCV(body, "listRcvDetail");
     res.send(result);
 })
 

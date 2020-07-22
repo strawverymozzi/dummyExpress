@@ -77,18 +77,23 @@ class Service {
         return this.fiddleDataSource(`./${this.lang}/$rcvDB.json`, task);
     }
 
-    static deleteRCV(key, target) {
+    static deleteRCV(body, target) {
         const task = (jsonDB) => {
             const list = jsonDB[target];
-            for (let idx in list) {
-                if (list[idx]["uid"] == key) {
-                    jsonDB[target].splice(idx, 1);
+            let cnt = 0;
+            for (let data of body) {
+                const key = data["uid"];
+                for (let idx in list) {
+                    if (list[idx]["uid"] == key) {
+                        jsonDB[target].splice(idx, 1);
+                        cnt++;
+                    }
                 }
             }
             return {
                 "success": true,
                 "code": 0,
-                "msg": "마스터 DELETE 성공하였습니다.",
+                "msg": `마스터 DELETE ${cnt}건 성공하였습니다.`,
                 "list": [0]
             };
         }
