@@ -84,6 +84,7 @@ app.delete('/api/v1/rec/receive/deleteRcv', async (req, res) => {
 })
 
 app.get('/api/v1/rec/receive/listRcvDetail', async (req, res) => {
+    const query = req.query || {};
     result = await Service.getAllRCV("listRcvDetail");
     res.send(result);
 });
