@@ -1,8 +1,8 @@
 {
-	"login": {
-		"dictionary": {
-			"EMAIL": "Email Address",
-			"PASSWORD": "Password"
-		}
+	"dictionary": {
+		"TENANTID": "Company",
+		"USERID": "User ID",
+		"USRPWD": "Password",
+		"REMBME": "Remember"
 	}
 }

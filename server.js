@@ -42,23 +42,21 @@ app.get('/api/v1/auth/login', async (req, res) => {
 });
 
 app.post('/api/v1/auth/login', (req, res) => {
-    res.send({
-        token: Service.getToken()
-    });
+    res.send(Service.getToken());
 });
 
-app.get('/api/v1/menu/ADMINMENU', (req, res) => {
+app.get('/api/v1/mdm/menu', (req, res) => {
     res.send(Service.getMenu());
+});
+
+app.get('/api/v1/rec/receive', (req, res) => {
+    res.send(Service.getRCVInit());
 });
 
 app.get('/api/v1/searchHelp/:shkey', async (req, res) => {
     const key = req.params.shkey;
     result = await Service.getSearchHelp(key);
     res.send(result);
-});
-
-app.get('/api/v1/menu/ADMINMENU', (req, res) => {
-    res.send(Service.getMenu());
 });
 
 app.get('/api/v1/rec/receive/listRcv', async (req, res) => {

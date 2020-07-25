@@ -15,10 +15,10 @@ class Service {
     static fiddleDataSource(filePath, taskfunction) {
         let rs;
         return new Promise((res, rej) => {
-            const data = fs.readFileSync(filePath, 'utf8', function readFileCallback(err, data) { });
+            const data = fs.readFileSync(filePath, 'utf8', function readFileCallback(err, data) {});
             const jsonDB = JSON.parse(data); //now it an object
             rs = taskfunction(jsonDB); //add some data
-            fs.writeFileSync(filePath, JSON.stringify(jsonDB, null, "\t"), 'utf8', function () { }); // write it back 
+            fs.writeFileSync(filePath, JSON.stringify(jsonDB, null, "\t"), 'utf8', function () {}); // write it back 
             res(rs);
         })
     }
@@ -77,7 +77,7 @@ class Service {
         return this.fiddleDataSource(`./${this.lang}/$rcvDB.json`, task);
     }
 
-    static changeRCVDetail(detailList){
+    static changeRCVDetail(detailList) {
 
         const promiseChain = [];
         for (let detail of detailList) {
@@ -88,8 +88,7 @@ class Service {
             .then((results) => {
                 return results;
             })
-            .catch((e) => {
-            });
+            .catch((e) => {});
 
     }
 
@@ -130,8 +129,7 @@ class Service {
             .then((results) => {
                 return results;
             })
-            .catch((e) => {
-            });
+            .catch((e) => {});
     }
 
     static getNewUID() {
@@ -155,58 +153,89 @@ class Service {
             "success": true,
             "code": 0,
             "msg": "성공하였습니다.",
-            "transationTime": "2020-05-17T20:12:56.9294169",
+            "transationTime": "2020-07-25T19:33:14.6371888",
             "list": [{
-                "uid": 10000,
-                "tenant": "1000",
-                "title": "MENU1",
-                "icon": "shopping-cart-outline",
-                "menuPath": "10000",
-                "appUid": null,
-                "url": null,
-                "link": null,
-                "windowName": null,
-                "children": [{
-                    "uid": 10002,
+                    "uid": 10000,
                     "tenant": "1000",
-                    "title": "입고예정",
-                    "icon": "shopping-cart-outline",
-                    "menuPath": "10000|10002",
-                    "appUid": 90003,
-                    "url": "http://localhost:3001/api/global/sampleComp",
-                    "link": "/adminPages/CM/application3",
-                    "windowName": "rcv",
+                    "title": "MENU1",
+                    "icon": "home-outline",
+                    "menuPath": "10000",
+                    "appUid": null,
+                    "url": null,
+                    "link": null,
+                    "windowName": null,
+                    "children": [{
+                        "uid": 10002,
+                        "tenant": "1000",
+                        "title": "MENU3",
+                        "icon": "home-outline",
+                        "menuPath": "10000|10002",
+                        "appUid": 90003,
+                        "url": "http://www.jflab.co.kr:18001/api/v1/rec/receive",
+                        "link": "/adminPages/CM/application3",
+                        "windowName": "rcv",
+                        "children": [],
+                        "insFlg": "I3bf0faZOdYKsS5EhYGUStkWhWiBV8gBC5p1FG8xz5U=",
+                        "updFlg": "LkhF1x2Eva7i9SYNof0fetkWhWiBV8gBC5p1FG8xz5U=",
+                        "delFlg": ""
+                    }],
+                    "insFlg": null,
+                    "updFlg": null,
+                    "delFlg": null
+                },
+                {
+                    "uid": 10001,
+                    "tenant": "1000",
+                    "title": "MENU2",
+                    "icon": "home-outline",
+                    "menuPath": "10001",
+                    "appUid": 90001,
+                    "url": "/CM/APP",
+                    "link": "/CM/APP",
+                    "windowName": null,
                     "children": [],
-                    "insFlg": "I3bf0faZOdYKsS5EhYGUStkWhWiBV8gBC5p1FG8xz5U=",
-                    "updFlg": "LkhF1x2Eva7i9SYNof0fetkWhWiBV8gBC5p1FG8xz5U=",
-                    "delFlg": ""
-                }],
-                "insFlg": null,
-                "updFlg": null,
-                "delFlg": null
-            },
-            {
-                "uid": 10001,
-                "tenant": "1000",
-                "title": "MENU2",
-                "icon": "shopping-cart-outline",
-                "menuPath": "10001",
-                "appUid": 90001,
-                "url": "/CM/test1",
-                "link": "/adminPages/AdminModule1Module/test1",
-                "windowName": null,
-                "children": [],
-                "insFlg": "02W4Lc/aYBMcIVioXkTauRnoFbEk1cqa4/mCe/vGkl8=",
-                "updFlg": "hmxY0gurkbZKWgPc6/F2T2S6MlbNlnG3Vit+rhh3swk=",
-                "delFlg": "POa4BMjxP1K9uqzyh5Sfbw40bL2g90IdSu66IniFxK4="
+                    "insFlg": "02W4Lc/aYBMcIVioXkTauRnoFbEk1cqa4/mCe/vGkl8=",
+                    "updFlg": "hmxY0gurkbZKWgPc6/F2T2S6MlbNlnG3Vit+rhh3swk=",
+                    "delFlg": "POa4BMjxP1K9uqzyh5Sfbw40bL2g90IdSu66IniFxK4="
+                }
+            ],
+        }
+    }
+
+    static getRCVInit() {
+        return {
+            "success": true,
+            "code": 0,
+            "msg": "성공하였습니다.",
+            "transationTime": "2020-07-25T19:52:09.6114747",
+            "data": {
+                "dictionary": {},
+                "RCVSTATUS": {
+                    200: "입고예정",
+                    300: "입고접수",
+                    400: "적치완료",
+                    600: "입고확정",
+                    900: "입고승인"
+                },
+                "RCVTYPE": {
+                    200: "입고예정",
+                    300: "입고접수",
+                    400: "적치완료",
+                    600: "입고확정",
+                    900: "입고승인"
+                }
             }
-            ]
         }
     }
 
     static getToken() {
-        const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMDAwMCIsInRlbmFudCI6IjEwMDAiLCJ1c2VySWQiOiJURVNUX1VTRVIiLCJmdWxsTmFtZSI6Iu2FjOyKpO2KuOycoOyggCIsInBhZ2VSb2xlIjp7InVwZEZsZyI6IiIsImluZkZsZyI6IiIsImRlbEZsZyI6IiJ9LCJwcm9ncmFtaWQiOiIiLCJsYW5ndWFnZSI6ImtvLUtSIiwiaWF0IjoxNTkwMTQ4MzU5LCJleHAiOjE1OTAxNTE5NTl9.PMU8KEBSrLap9nicBan9eYeld5mNqhO54pi7prTpKac';
-        return token;
+        return {
+            "token": {
+                "expires_in": 1595672636282,
+                "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMDAwMCIsInRlbmFudCI6IjEwMDAiLCJ1c2VySWQiOiJURVNUX1VTRVIiLCJmdWxsTmFtZSI6Iu2FjOyKpO2KuOycoOyggCIsInBhZ2VSb2xlIjp7InVwZEZsZyI6IiIsImluZkZsZyI6IiIsImRlbEZsZyI6IiJ9LCJwcm9ncmFtaWQiOiIiLCJpYXQiOjE1OTU2NjkwMzYsImV4cCI6MTU5NTY3MjYzNn0.2i4AM02cRrSSw9haLIAeqor_KbAuRzCUYncyp-vPJOI",
+                "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMDAwMCIsInRlbmFudCI6IjEwMDAiLCJ1c2VySWQiOiJURVNUX1VTRVIiLCJmdWxsTmFtZSI6Iu2FjOyKpO2KuOycoOyggCIsInBhZ2VSb2xlIjp7InVwZEZsZyI6IiIsImluZkZsZyI6IiIsImRlbEZsZyI6IiJ9LCJwcm9ncmFtaWQiOiIiLCJpYXQiOjE1OTU2NjkwMzYsImV4cCI6MTU5ODI2MTAzNn0.FkVc0I3U4G_Ecz2BoHMPUT0KXwzoSviynWhYt7AR47M"
+            }
+        }
 
     }
 

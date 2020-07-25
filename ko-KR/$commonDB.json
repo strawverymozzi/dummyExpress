@@ -1,8 +1,8 @@
 {
-	"login": {
-		"dictionary": {
-			"EMAIL": "이메일",
-			"PASSWORD": "비밀번호"
-		}
+	"dictionary": {
+		"TENANTID": "회사코드",
+		"USERID": "아이디",
+		"USRPWD": "비밀번호",
+		"REMBME": "기억여부"
 	}
 }
