@@ -90,7 +90,7 @@ app.get('/api/v1/rec/receive/listRcvDetail', async (req, res) => {
 });
 
 app.post('/api/v1/rec/receive/saveRcvDetail', async (req, res) => {
-    result = await Service.changeRCV(req.body, "listRcvDetail");
+    result = await Service.changeRCVDetail(req.body, "listRcvDetail");
     res.send(result);
 });
 

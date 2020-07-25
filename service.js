@@ -77,6 +77,22 @@ class Service {
         return this.fiddleDataSource(`./${this.lang}/$rcvDB.json`, task);
     }
 
+    static changeRCVDetail(detailList){
+
+        const promiseChain = [];
+        for (let detail of detailList) {
+            promiseChain.push(this.changeRCV(detail, 'listRcvDetail'));
+        }
+
+        return Promise.all(promiseChain)
+            .then((results) => {
+                return results;
+            })
+            .catch((e) => {
+            });
+
+    }
+
     static deleteRCV(body, target) {
         const task = (jsonDB) => {
             const list = jsonDB[target];
@@ -93,7 +109,7 @@ class Service {
             return {
                 "success": true,
                 "code": 0,
-                "msg": `마스터 DELETE ${cnt}건 성공하였습니다.`,
+                "msg": `DELETE ${cnt}건 성공하였습니다.`,
                 "list": [0]
             };
         }
@@ -116,7 +132,6 @@ class Service {
             })
             .catch((e) => {
             });
-
     }
 
     static getNewUID() {

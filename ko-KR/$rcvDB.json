@@ -15,7 +15,7 @@
 			"sts": "200.0",
 			"priorities": "0.0",
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트COMPANNY100",
+			"companyName": "comcomcom",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -85,7 +85,7 @@
 			"sts": "200.0",
 			"priorities": "0.0",
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트COMPANNY1",
+			"companyName": "테스트COMPANNYgoogle",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -94,7 +94,7 @@
 			"warehouseName": "창고이름",
 			"suppliercd": null,
 			"supplierName": null,
-			"address1": "sdfs",
+			"address1": "",
 			"address2": null,
 			"address3": null,
 			"postNo": null,
@@ -138,7 +138,8 @@
 			"moveKey": null,
 			"assyKey": null,
 			"produceKey": null,
-			"remarks": null
+			"remarks": null,
+			"phone1": ""
 		},
 		{
 			"uid": "10002.0",
@@ -349,18 +350,8 @@
 			"moveKey": null,
 			"assyKey": null,
 			"produceKey": null,
-			"remarks": null
-		},
-		{
-			"companyName": "google",
-			"uid": "182020133529776",
-			"name": "qw",
-			"phone1": "qwqwe"
-		},
-		{
-			"uid": "182020235043479",
-			"companyName": "moraron.com",
-			"name": "be,loved"
+			"remarks": null,
+			"phone1": "456789"
 		}
 	],
 	"listRcvDetail": [
@@ -378,8 +369,8 @@
 			"originalPoNo": "null",
 			"originalPoLineNo": "null",
 			"poDate": "null",
-			"ownercd": "INIT_COMP01",
-			"ownerName": "테스트 COMPANNY",
+			"ownercd": "PARTNERKEYqwe",
+			"ownerName": "IM PARTNERqwe",
 			"itemAdmincd": "A1000",
 			"itemAdminName": "TESTADMIN",
 			"itemcd": "ITEM_CD001",
@@ -450,8 +441,8 @@
 			"originalPoNo": "null",
 			"originalPoLineNo": "null",
 			"poDate": "null",
-			"ownercd": "INIT_COMP01",
-			"ownerName": "테스트 COMPANNY",
+			"ownercd": "PARTNERKEYqwe",
+			"ownerName": "IM PARTNERqwe",
 			"itemAdmincd": "A1000",
 			"itemAdminName": "TESTADMIN",
 			"itemcd": "ITEM_CD002",
@@ -507,6 +498,11 @@
 			"remarks": "null",
 			"xdockFreeQty1": "0.0",
 			"xdockFlg": "0.0"
+		},
+		{
+			"ownercd": "test",
+			"ownerName": "test",
+			"uid": "252020072241672"
 		}
 	]
 }
