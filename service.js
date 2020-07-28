@@ -96,8 +96,7 @@ class Service {
         const task = (jsonDB) => {
             const list = jsonDB[target];
             let cnt = 0;
-            for (let data of body) {
-                const key = data["uid"];
+            for (let key of body) {
                 for (let idx in list) {
                     if (list[idx]["uid"] == key) {
                         jsonDB[target].splice(idx, 1);
