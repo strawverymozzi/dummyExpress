@@ -88,7 +88,7 @@
 			"sts": 200,
 			"priorities": 0,
 			"companycd": "INIT_COMP02",
-			"companyName": "테스트 COMPANNY2",
+			"companyName": "테스트 COMPANNY99",
 			"rcvSchDate": "2020-05-31",
 			"receiveDate": "2020-06-02",
 			"logisticscd": "INIT_COMP01",
@@ -361,10 +361,6 @@
 			"produceKey": null,
 			"remarks": null,
 			"phone1": "q232"
-		},
-		{
-			"companyName": "sdasd",
-			"uid": "282020005057634"
 		}
 	],
 	"listRcvDetail": [

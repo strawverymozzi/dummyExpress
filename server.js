@@ -34,14 +34,14 @@ app.use(cors({
 }));
 
 var Service = require('./service');
-app.get('/api/v1/auth/login', async (req, res) => {
+app.get('/auth/login', async (req, res) => {
     const query = req.query || {};
     Service.setLangKey(query.language);
     result = await Service.getPageInit('login');
     res.send(result);
 });
 
-app.post('/api/v1/auth/login', (req, res) => {
+app.post('/auth/login', (req, res) => {
     res.send(Service.getToken());
 });
 
