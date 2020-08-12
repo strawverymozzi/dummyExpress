@@ -1,8 +1,10 @@
 {
-	"dictionary": {
-		"TENANTID": "회사코드",
-		"USERID": "아이디",
-		"USRPWD": "비밀번호",
-		"REMBME": "기억여부"
+	"login": {
+		"dictionary": {
+			"TENANTID": "회사코드",
+			"USERID": "아이디",
+			"USRPWD": "비밀번호",
+			"REMBME": "기억여부"
+		}
 	}
 }
